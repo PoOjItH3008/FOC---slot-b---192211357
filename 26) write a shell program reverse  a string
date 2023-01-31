@@ -1,0 +1,7 @@
+#!/bin/bash
+
+string="hello world"
+
+reversed_string=$(echo $string | rev)
+
+echo $reversed_string
