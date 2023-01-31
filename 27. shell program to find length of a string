@@ -1,0 +1,7 @@
+#!/bin/bash
+
+string="hello world"
+
+length=${#string}
+
+echo "The length of the string '$string' is $length."
