@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+shape=$1
+dim1=$2
+dim2=$3
+
+if [ $shape == "square" ]; then
+  area=$(($dim1 * $dim1))
+elif [ $shape == "rectangle" ]; then
+  area=$(($dim1 * $dim2))
+elif [ $shape == "circle" ]; then
+  area=$(echo "scale=2; 3.14159265359 * ($dim1 / 2)^2" | bc)
+else
+  echo "Invalid shape."
+  exit 1
+fi
+
+echo "Area: $area"
