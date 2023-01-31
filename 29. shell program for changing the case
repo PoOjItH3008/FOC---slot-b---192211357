@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter a string: " string
+
+if [[ "$string" = "$(echo "$string" | tr '[:lower:]' '[:upper:]')" ]]; then
+  echo "$string in upper case: $(echo "$string" | tr '[:upper:]' '[:lower:]')"
+else
+  echo "$string in upper case: $(echo "$string" | tr '[:lower:]' '[:upper:]')"
+fi
