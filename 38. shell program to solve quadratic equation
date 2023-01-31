@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Enter coefficients a, b, and c:"
+read a
+read b
+read c
+
+delta=$(echo "scale=2; ($b * $b) - (4 * $a * $c)" | bc)
+
+if [ $(echo "$delta < 0" | bc) -eq 1 ]; then
+  echo "The equation has no real roots"
+else
+  sqrt_delta=$(echo "scale=2; sqrt($delta)" | bc)
+  x1=$(echo "scale=2; (-$b + $sqrt_delta) / (2 * $a)" | bc)
+  x2=$(echo "scale=2; (-$b - $sqrt_delta) / (2 * $a)" | bc)
+  echo "x1 = $x1"
+  echo "x2 = $x2"
+fi
